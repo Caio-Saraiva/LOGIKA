@@ -8,18 +8,36 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
 
-     <!-- Esconde o cursor do navegador sobre o canvas do Unity -->
+    <!-- estilo para fullscreen e esconder cursor nativo -->
     <style>
-    /* Alvo o canvas do Unity pelo ID e por tag genérica */
-    #unity-canvas, canvas {
-      cursor: none !important;
-    }
-    </style>
+      /* Remove scroll e margens padrão */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
 
+      /* Container do Unity em tela cheia */
+      #unity-container {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Canvas redimensiona junto */
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        cursor: none !important; /* esconde cursor sobre o canvas */
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -61,7 +79,7 @@
         updateBannerVisibility();
       }
 
-      var buildVersion = "1.0.1";  // << sua versão aqui
+      var buildVersion = "1.0.2";  // << sua versão aqui
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/LOGIKA.loader.js?v=" + buildVersion;
       var config = {
