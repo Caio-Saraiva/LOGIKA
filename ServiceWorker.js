@@ -1,4 +1,4 @@
-const cacheName = "CheetosStudio-CircuitsPlease-0.9.5";
+const cacheName = "CheetosStudio-LOGIKA-1.0.0";
 const contentToCache = [
     "Build/LOGIKA.loader.js",
     "Build/LOGIKA.framework.js",
